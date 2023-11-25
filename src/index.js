@@ -9,10 +9,6 @@ class Todo {
     changeToDone() {
         this.done = !this.done
     }
-
-    deleteTodo() {
-        //self destruct button
-    }
 }
 
 class Project {
@@ -33,6 +29,7 @@ class Project {
         }
     }
 }
+
 
 let limpiar = new Todo('limpiar la casa', 'tirar todo a la mierda, pasar la aspiradora, recoger la pelusa del arbol y limpiar los pisos', 'baja', false)
 let casa = new Project('casa', 'rojo')

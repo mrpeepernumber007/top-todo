@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://top-todo/./src/index.js?");
+eval("class Todo {\n    constructor(title, description, priority, done){\n        this.title = title\n        this.description = description\n        this.priority = priority\n        this.done = false\n    }\n\n    changeToDone() {\n        this.done = !this.done\n    }\n\n    deleteTodo() {\n        //self destruct button\n    }\n}\n\nclass Project {\n    constructor(title, color) {\n        this.title = title\n        this.color = color\n        this.todos = []\n    }\n\n    addTodo() {\n        //add Todo\n    }\n}\n\n\n\n//# sourceURL=webpack://top-todo/./src/index.js?");
 
 /***/ })
 

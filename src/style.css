@@ -79,7 +79,9 @@ li {
 }
 
 .delete-todo-btn {
-    padding: 10px;
+    /* padding: 5px; */
+    height: 2rem;
+    width: 2rem;
     background-color: aqua;
 }
 
@@ -95,4 +97,5 @@ li {
 
 .add-todos {
     display: flex;
+    margin: 30px 0px;
 }

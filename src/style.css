@@ -1,3 +1,98 @@
-.sky-body {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif, Verdana, Tahoma, sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+}
+
+.banner-div {
     background-color: lightblue;
+
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lower-content {
+    background-color: lightgreen;
+
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    /* padding: 30px; */
+}
+
+.left-nav {
+    padding: 30px;
+    background-color: #fff;
+}
+
+.projects-div {
+    margin-top: 20px;
+}
+
+.project {
+    margin: 10px 0px;
+}
+
+.add-project {
+    display: flex;
+}
+
+
+.todos-layout {
+    padding: 10px;
+}
+
+.project-title-div {
+    background-color: aquamarine;
+    padding: 40px 20px;
+    border-radius: 20px;
+}
+
+.todo-description {
+    color: #333;
+}
+
+.todos-list {
+    margin: 20px 0px;
+    padding: 20px;
+}
+
+.s-todo {
+    margin: 10px 20px;
+    padding: 10px;
+    background-color: cadetblue;
+    display: grid;
+    grid-template-columns: 1fr 2fr 8fr 3fr;
+}
+
+.delete-todo-btn {
+    padding: 10px;
+    background-color: aqua;
+}
+
+.done-btn {
+    margin: 0px 10px;
+}
+.todo-text {
+    margin: 0px 10px;
+}
+.priority-select {
+    margin: 0px 10px;
+}
+
+.add-todos {
+    display: flex;
 }

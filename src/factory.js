@@ -32,5 +32,3 @@ export class Project {
         }
     }
 }
-
-// export {Todo, Project}

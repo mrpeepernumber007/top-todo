@@ -6,8 +6,11 @@ class Todo {
         this.done = done
     }
 
-    changeToDone() {
+    changeDone() {
         this.done = !this.done
+    }
+    changePriority(newPriority){
+        this.priority = newPriority
     }
 }
 
@@ -36,3 +39,7 @@ let casa = new Project('casa', 'rojo')
 let gym = new Todo('ir al gym', 'trabajar brazos y pecho', 'baja', false)
 let lavar = new Todo('lavar ropa', 'lavar sabanas y calzones', 'alta', false)
 let compras = new Todo('realizar las compras', 'comprar un pollo y una manteca', 'media', false)
+
+
+//when data is returned in JSON format, methods should be returned to the objects by way of a function that assings the method to the object's prototype
+

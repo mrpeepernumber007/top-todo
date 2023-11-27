@@ -1,5 +1,6 @@
 import {Todo, Project} from './factory.js'
 
+
 let casa = new Project('casa', 'rojo')
 let limpiar = new Todo('limpiar la casa', 'tirar todo a la mierda, pasar la aspiradora, recoger la pelusa del arbol y limpiar los pisos', 'baja', false)
 let gym = new Todo('ir al gym', 'trabajar brazos y pecho', 'baja', false)

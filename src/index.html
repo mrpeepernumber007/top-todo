@@ -3,10 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="../src/style.css">
     <title>ToDo List</title>
 </head>
 <body>
-    
+    <div class="wrapper">
+        <div class="banner-div">
+            <div class="logo-div">ToDo Desk</div>
+            <div class="dark-light-mode">
+                <button class="light-dark"></button>
+            </div>
+        </div>
+        <div class="lower-content">
+            <div class="left-nav">
+                <h2>Projects</h2>
+                <div class="projects-div">
+                    <ul class="projects-ul">
+                        <li class="project">
+                            <i class="project-icon"></i>
+                            <p class="project-name">Show all projects</p>
+                        </li>
+                        <li class="project">
+                            <i class="project-icon"></i>
+                            <p class="project-name">House cleanup</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="add-project">
+                    <i class="project-icon add-icon"></i>
+                    <p class="project-name">New Project</p>
+                </div>
+            </div>
+            <div class="todo-layout">
+                <div class="project-title-div">
+                    <h1>House cleanup</h1>
+                </div>
+                <div class="todos-list">
+                    <ul class="todos-ul">
+                        <li class="s-todo">
+                            <button class="done-btn"></button>
+                            <div class="todo-text">
+                                <h3 class="todo-title">Mop floors</h3>
+                                <p class="todo-description">Mop floors with wet mop</p>
+                            </div>
+                            <p class="priority"></p>
+                        </li>
+                        <li class="s-todo">
+                            <button class="done-btn"></button>
+                            <div class="todo-text">
+                                <h3 class="todo-title">Throw away stuff</h3>
+                                <p class="todo-description">Throw away useless stuff</p>
+                            </div>
+                            <p class="priority"></p>
+                        </li>
+                        <li class="s-todo">
+                            <button class="done-btn"></button>
+                            <div class="todo-text">
+                                <h3 class="todo-title">Organize</h3>
+                                <p class="todo-description">Reorganize stuff in bedroom and living room</p>
+                            </div>
+                            <p class="priority"></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="add-todos">
+                    <i class="project-icon add-icon"></i>
+                    <p class="project-name">New element</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

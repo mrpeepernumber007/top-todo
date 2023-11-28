@@ -1,12 +1,12 @@
-export function domTodo(title, description) {
+export function domTodo(todo) {
     const singleTd = document.createElement('div')
     singleTd.classList.add('s-todo')
     singleTd.innerHTML = `
     <button class="delete-todo-btn">X</button>
     <input type="checkbox" class="done-btn">
     <div class="todo-text">
-        <h3 class="todo-title">${title}</h3>
-        <p class="todo-description">${description}</p>
+        <h3 class="todo-title">${todo.title}</h3>
+        <p class="todo-description">${todo.description}</p>
     </div>
     <div class="priority-select">
         <label for="priority">Select a priority</label>
@@ -19,4 +19,18 @@ export function domTodo(title, description) {
     `
     const todosUl = document.querySelector('.todos-ul')
     todosUl.appendChild(singleTd)
+}
+
+export function domProject(project) {
+    const singleProj = document.createElement('li')
+    singleProj.classList.add('project')
+    singleProj.innerHTML = `
+    <li class="project">
+        <i class="project-icon"></i>
+        <p class="project-name">${project.title}</p>
+    </li>
+    `
+
+    const projectsUl = document.querySelector('.projects-ul')
+    projectsUl.appendChild(singleProj)
 }

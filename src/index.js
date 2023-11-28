@@ -1,6 +1,6 @@
 import { Todo, Project } from './factory.js'
 import { createTodo, createProject } from './addModule.js'
-import { domTodo } from './domModule.js'
+import { domProject, domTodo } from './domModule.js'
 
 let casa = new Project('casa', 'rojo')
 let limpiar = new Todo('limpiar la casa', 'tirar todo a la mierda, pasar la aspiradora, recoger la pelusa del arbol y limpiar los pisos', 'baja', false)
@@ -15,13 +15,15 @@ newTodo.addEventListener('click', () => {
     const givenTitle = 'limpiar tacho'
     const givenDescription = 'limpiar tachos de basura de cocina y baño'
 
-    createTodo(givenTitle, givenDescription, casa)
-    domTodo(givenTitle, givenDescription)
-    console.log(casa);
+    const createdTodo = createTodo(givenTitle, givenDescription, casa)
+    console.log(createdTodo);
+    domTodo(createdTodo)
 })
 
 newProject.addEventListener('click', ()=> {
-    createProject('cuidado del perro', 'verde')
+    const givenTitle = 'salud'
+    const createdProject = createProject(givenTitle, 'rojo')
+    domProject(createdProject)
 })
 
 

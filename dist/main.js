@@ -10,6 +10,26 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/addModule.js":
+/*!**************************!*\
+  !*** ./src/addModule.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   createProject: () => (/* binding */ createProject),\n/* harmony export */   createTodo: () => (/* binding */ createTodo)\n/* harmony export */ });\n/* harmony import */ var _factory_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./factory.js */ \"./src/factory.js\");\n\n\nfunction createTodo(title, description, project) {\n    const newTodo = new _factory_js__WEBPACK_IMPORTED_MODULE_0__.Todo(title, description)\n    project.addTodo(newTodo)\n    return newTodo\n}\n\nfunction createProject(title, color) {\n    const newProject = new _factory_js__WEBPACK_IMPORTED_MODULE_0__.Project(title, color)\n    return newProject\n}\n\n//# sourceURL=webpack://top-todo/./src/addModule.js?");
+
+/***/ }),
+
+/***/ "./src/domModule.js":
+/*!**************************!*\
+  !*** ./src/domModule.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   domProject: () => (/* binding */ domProject),\n/* harmony export */   domTodo: () => (/* binding */ domTodo)\n/* harmony export */ });\nfunction domTodo(todo) {\n    const singleTd = document.createElement('div')\n    singleTd.classList.add('s-todo')\n    singleTd.innerHTML = `\n    <button class=\"delete-todo-btn\">X</button>\n    <input type=\"checkbox\" class=\"done-btn\">\n    <div class=\"todo-text\">\n        <h3 class=\"todo-title\">${todo.title}</h3>\n        <p class=\"todo-description\">${todo.description}</p>\n    </div>\n    <div class=\"priority-select\">\n        <label for=\"priority\">Select a priority</label>\n        <select name=\"prt\" id=\"priority\">\n            <option value=\"high\">High</option>\n            <option value=\"medium\">Medium</option>\n            <option value=\"low\">Low</option>\n        </select>\n    </div>\n    `\n    const todosUl = document.querySelector('.todos-ul')\n    todosUl.appendChild(singleTd)\n}\n\nfunction domProject(project) {\n    const singleProj = document.createElement('li')\n    singleProj.classList.add('project')\n    singleProj.innerHTML = `\n    <li class=\"project\">\n        <i class=\"project-icon\"></i>\n        <p class=\"project-name\">${project.title}</p>\n    </li>\n    `\n\n    const projectsUl = document.querySelector('.projects-ul')\n    projectsUl.appendChild(singleProj)\n}\n\n//# sourceURL=webpack://top-todo/./src/domModule.js?");
+
+/***/ }),
+
 /***/ "./src/factory.js":
 /*!************************!*\
   !*** ./src/factory.js ***!
@@ -26,7 +46,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _factory_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./factory.js */ \"./src/factory.js\");\n\n\n\nlet casa = new _factory_js__WEBPACK_IMPORTED_MODULE_0__.Project('casa', 'rojo')\nlet limpiar = new _factory_js__WEBPACK_IMPORTED_MODULE_0__.Todo('limpiar la casa', 'tirar todo a la mierda, pasar la aspiradora, recoger la pelusa del arbol y limpiar los pisos', 'baja', false)\nlet gym = new _factory_js__WEBPACK_IMPORTED_MODULE_0__.Todo('ir al gym', 'trabajar brazos y pecho', 'baja', false)\nlet lavar = new _factory_js__WEBPACK_IMPORTED_MODULE_0__.Todo('lavar ropa', 'lavar sabanas y calzones', 'alta', false)\nlet compras = new _factory_js__WEBPACK_IMPORTED_MODULE_0__.Todo('realizar las compras', 'comprar un pollo y una manteca', 'media', false)\n\n\n\n\n//when data is returned in JSON format, methods should be returned to the objects by way of a function that assings the method to the object's prototype\n\n\n\n//# sourceURL=webpack://top-todo/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _factory_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./factory.js */ \"./src/factory.js\");\n/* harmony import */ var _addModule_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./addModule.js */ \"./src/addModule.js\");\n/* harmony import */ var _domModule_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./domModule.js */ \"./src/domModule.js\");\n\n\n\n\nlet casa = new _factory_js__WEBPACK_IMPORTED_MODULE_0__.Project('casa', 'rojo')\nlet limpiar = new _factory_js__WEBPACK_IMPORTED_MODULE_0__.Todo('limpiar la casa', 'tirar todo a la mierda, pasar la aspiradora, recoger la pelusa del arbol y limpiar los pisos', 'baja', false)\nlet gym = new _factory_js__WEBPACK_IMPORTED_MODULE_0__.Todo('ir al gym', 'trabajar brazos y pecho', 'baja', false)\nlet lavar = new _factory_js__WEBPACK_IMPORTED_MODULE_0__.Todo('lavar ropa', 'lavar sabanas y calzones', 'alta', false)\nlet compras = new _factory_js__WEBPACK_IMPORTED_MODULE_0__.Todo('realizar las compras', 'comprar un pollo y una manteca', 'media', false)\n\nconst newTodo = document.getElementById('new-todo')\nconst newProject = document.getElementById('new-project')\n\nnewTodo.addEventListener('click', () => {\n    const givenTitle = 'limpiar tacho'\n    const givenDescription = 'limpiar tachos de basura de cocina y baño'\n\n    const createdTodo = (0,_addModule_js__WEBPACK_IMPORTED_MODULE_1__.createTodo)(givenTitle, givenDescription, casa)\n    console.log(createdTodo);\n    (0,_domModule_js__WEBPACK_IMPORTED_MODULE_2__.domTodo)(createdTodo)\n})\n\nnewProject.addEventListener('click', ()=> {\n    const givenTitle = 'salud'\n    const createdProject = (0,_addModule_js__WEBPACK_IMPORTED_MODULE_1__.createProject)(givenTitle, 'rojo')\n    ;(0,_domModule_js__WEBPACK_IMPORTED_MODULE_2__.domProject)(createdProject)\n})\n\n\n\n//when data is returned in JSON format, methods should be returned to the objects by way of a function that assings the method to the object's prototype\n\n\n\n//# sourceURL=webpack://top-todo/./src/index.js?");
 
 /***/ })
 

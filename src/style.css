@@ -124,3 +124,19 @@ input {
     color: #fff;
     background-color: #000;
 }
+
+.new-todo-form {
+    position: absolute;
+    background-color: aquamarine;
+    left: .5vw;
+    top: .5vh;
+    z-index: -1;
+}
+
+.new-project-form {
+    position: absolute;
+    background-color: aquamarine;
+    left: .5vw;
+    top: .5vh;
+    z-index: -1;
+}

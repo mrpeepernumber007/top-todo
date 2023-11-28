@@ -34,3 +34,19 @@ export function domProject(project) {
     const projectsUl = document.querySelector('.projects-ul')
     projectsUl.appendChild(singleProj)
 }
+
+export function showProject(project) {
+    const projectContainerRight = document.querySelector('.s-pr-container')
+    projectContainerRight.innerHTML = ''
+    projectContainerRight.innerHTML = `
+        <div class="project-title-div">
+            <h1 id="current-project">${project.title}</h1>
+        </div>
+        <div class="todos-list">
+            <ul class="todos-ul"></ul>
+        </div>
+    `
+    project.todos.forEach(todo => {
+        domTodo(todo)
+    });
+}

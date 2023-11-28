@@ -1,15 +1,25 @@
 import { createTodo, createProject } from './addModule.js'
 import { domProject, domTodo } from './domModule.js'
 import {casa} from './index.js'
+import { projectsArray } from './addModule.js'
 
 export function todoForm() {
     const titleForm = document.getElementById('f-td-title')
     const formDesc = document.getElementById('f-td-description')
+    const currentProjectDOM = document.getElementById('current-project')
+    let currentProjectObject = ''
+    projectsArray.forEach((project) => {
+        if (currentProjectDOM.textContent === project.title) {
+            currentProjectObject = project
+        }
+    })
     domTodo(
-        createTodo(titleForm.value, formDesc.value, casa)
+        createTodo(titleForm.value, formDesc.value, currentProjectObject)
     )
     titleForm.value = ''
     formDesc.value = ''
+    const form = document.querySelector('.new-todo-form')
+    form.style.zIndex = '-1'
 }
 
 export function projectForm() {
@@ -20,4 +30,6 @@ export function projectForm() {
     )
     color.value = ''
     titleForm.value = ''
+    const form = document.querySelector('.new-project-form')
+    form.style.zIndex = '-1'
 }

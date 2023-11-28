@@ -1,6 +1,5 @@
 import { Todo, Project } from './factory.js'
-import { createTodo, createProject } from './addModule.js'
-import { domProject, domTodo } from './domModule.js'
+import { todoForm, projectForm } from './forms.js'
 
 let casa = new Project('casa', 'rojo')
 let limpiar = new Todo('limpiar la casa', 'tirar todo a la mierda, pasar la aspiradora, recoger la pelusa del arbol y limpiar los pisos', 'baja', false)
@@ -10,6 +9,12 @@ let compras = new Todo('realizar las compras', 'comprar un pollo y una manteca',
 
 const newTodo = document.getElementById('new-todo')
 const newProject = document.getElementById('new-project')
+const tdSubmit = document.getElementById('submit-td')
+const prSubmit = document.getElementById('submit-pr')
+
+tdSubmit.addEventListener('click', todoForm)
+
+prSubmit.addEventListener('click', projectForm)
 
 newTodo.addEventListener('click', () => {
     const givenTitle = 'limpiar tacho'
@@ -30,3 +35,4 @@ newProject.addEventListener('click', ()=> {
 
 //when data is returned in JSON format, methods should be returned to the objects by way of a function that assings the method to the object's prototype
 
+export {casa}

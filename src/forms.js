@@ -1,6 +1,7 @@
 import { createTodo, createProject } from './addModule.js'
-import { domProject, domTodo } from './domModule.js'
+import { domProject, domTodo, showProject } from './domModule.js'
 import { projectsArray } from './addModule.js'
+import { selectProject } from './index.js'
 
 export function todoForm() {
     const titleForm = document.getElementById('f-td-title')
@@ -21,14 +22,32 @@ export function todoForm() {
     form.style.zIndex = '-1'
 }
 
+// export function projectForm() {
+//     const titleForm = document.getElementById('f-pr-title')
+//     const color = document.getElementById('f-pr-color')
+//     domProject(
+//         createProject(titleForm.value, color)
+//     )
+//     color.value = ''
+//     titleForm.value = ''
+//     const form = document.querySelector('.new-project-form')
+//     form.style.zIndex = '-1'
+// }
 export function projectForm() {
     const titleForm = document.getElementById('f-pr-title')
     const color = document.getElementById('f-pr-color')
-    domProject(
-        createProject(titleForm.value, color)
-    )
+    const newProject = createProject(titleForm.value, color)
+
     color.value = ''
     titleForm.value = ''
     const form = document.querySelector('.new-project-form')
     form.style.zIndex = '-1'
+
+    const projectsUl = document.querySelector('.projects-ul')
+    projectsUl.innerHTML = ''
+    projectsArray.forEach((project) => domProject(project))
+
+    selectProject()
 }
+
+

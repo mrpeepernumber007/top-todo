@@ -21,19 +21,19 @@ export function domTodo(todo) {
     todosUl.appendChild(singleTd)
 }
 
-export function domProject(project) {
-    const singleProj = document.createElement('li')
-    singleProj.classList.add('project')
-    singleProj.innerHTML = `
-    <li class="project">
-        <i class="project-icon"></i>
-        <p class="project-name">${project.title}</p>
-    </li>
-    `
+// export function domProject(project) {
+//     const singleProj = document.createElement('li')
+//     singleProj.classList.add('project')
+//     singleProj.innerHTML = `
+//     <li class="project">
+//         <i class="project-icon"></i>
+//         <p class="project-name">${project.title}</p>
+//     </li>
+//     `
 
-    const projectsUl = document.querySelector('.projects-ul')
-    projectsUl.appendChild(singleProj)
-}
+//     const projectsUl = document.querySelector('.projects-ul')
+//     projectsUl.appendChild(singleProj)
+// }
 
 export function showProject(project) {
     const projectContainerRight = document.querySelector('.s-pr-container')
@@ -50,3 +50,18 @@ export function showProject(project) {
         domTodo(todo)
     });
 }
+
+export function domProject(project) {
+    const projectsUl = document.querySelector('.projects-ul')
+    const singleProj = document.createElement('li')
+    singleProj.classList.add('project')
+    singleProj.innerHTML = `
+    <li class="project">
+        <i class="project-icon"></i>
+        <p class="project-name">${project.title}</p>
+    </li>
+    `
+    
+    projectsUl.appendChild(singleProj)
+}
+

@@ -4,8 +4,20 @@
     box-sizing: border-box;
 }
 
+:root {
+    --aquamarine: #7fffd4;
+    --light-blue: #add8e6;
+    --light-green: #90ee90;
+    --cadet-blue: #5f9ea0;
+    --acqua: #00ffff;
+    --black: #000;
+    --white: #fff;
+    --dark-grey: #333;
+}
+
 body {
     font-family: sans-serif, Verdana, Tahoma, sans-serif;
+    color: var(--black);
 }
 
 li {
@@ -18,7 +30,7 @@ li {
 }
 
 .banner-div {
-    background-color: lightblue;
+    background-color: var(--light-blue);
 
     padding: 30px;
     display: flex;
@@ -26,7 +38,7 @@ li {
 }
 
 .lower-content {
-    background-color: lightgreen;
+    background-color: var(--light-green);
 
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -35,7 +47,7 @@ li {
 
 .left-nav {
     padding: 30px;
-    background-color: #fff;
+    background-color: var(--white);
 }
 
 .projects-div {
@@ -56,13 +68,13 @@ li {
 }
 
 .project-title-div {
-    background-color: aquamarine;
+    background-color: var(--aquamarine);
     padding: 40px 20px;
     border-radius: 20px;
 }
 
 .todo-description {
-    color: #333;
+    color: var(--dark-grey);
 }
 
 .todos-list {
@@ -73,7 +85,7 @@ li {
 .s-todo {
     margin: 10px 20px;
     padding: 10px;
-    background-color: cadetblue;
+    background-color: var(--cadet-blue);
     display: grid;
     grid-template-columns: 1fr 2fr 8fr 3fr;
 }
@@ -82,7 +94,7 @@ li {
     /* padding: 5px; */
     height: 2rem;
     width: 2rem;
-    background-color: aqua;
+    background-color: var(--acqua);
 }
 
 .done-btn {
@@ -103,7 +115,7 @@ li {
 .form {
     margin: 10px;
     padding: 20px;
-    box-shadow: 0px 0px 5px #000;
+    box-shadow: 0px 0px 5px var(--black);
 }
 
 .form fieldset {
@@ -121,13 +133,13 @@ input {
 .submit-form-btn {
     padding: 10px 7px;
     border-radius: 10px;
-    color: #fff;
-    background-color: #000;
+    color: var(--white);
+    background-color: var(--black);
 }
 
 .new-todo-form {
     position: absolute;
-    background-color: aquamarine;
+    background-color: var(--aquamarine);
     left: .5vw;
     top: .5vh;
     z-index: -1;
@@ -135,7 +147,7 @@ input {
 
 .new-project-form {
     position: absolute;
-    background-color: aquamarine;
+    background-color: var(--aquamarine);
     left: .5vw;
     top: .5vh;
     z-index: -1;

@@ -1,6 +1,5 @@
 import { createTodo, createProject } from './addModule.js'
 import { domProject, domTodo } from './domModule.js'
-import {casa} from './index.js'
 import { projectsArray } from './addModule.js'
 
 export function todoForm() {

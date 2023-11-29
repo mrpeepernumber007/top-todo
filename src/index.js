@@ -3,6 +3,14 @@ import { todoForm, projectForm } from './forms.js'
 import { showProject } from './domModule.js'
 
 const projectsArray = []
+const lDMode = document.querySelector('.light-dark')
+
+lDMode.addEventListener('click', () => {
+    let root = document.documentElement
+
+    root.style.setProperty('--white', '#000')
+    root.style.setProperty('--black', '#fff')
+})
 
 let casa = new Project('casa', 'rojo')
 let compras = new Project('compras', 'verde')

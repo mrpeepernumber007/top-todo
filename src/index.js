@@ -59,6 +59,17 @@ const prSubmit = document.getElementById('submit-pr')
 tdSubmit.addEventListener('click', todoForm)
 prSubmit.addEventListener('click', projectForm)
 
+//delete todo function
+export function deleteTodo(projectObj, todoDel) {
+    const delBtns = document.querySelectorAll('.delete-todo-btn')
+    delBtns.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            e.target.parentElement.remove()
+            projectObj.removeTodo(todoDel)
+        })
+    })
+}
+
 
 //when data is returned in JSON format, methods should be returned to the objects by way of a function that assings the method to the object's prototype
 export {casa, projectsArray}
